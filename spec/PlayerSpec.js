@@ -1,4 +1,4 @@
-describe('player', function(){
+describe('Player', function(){
 
   const player1 = new Player('Player1');
 
