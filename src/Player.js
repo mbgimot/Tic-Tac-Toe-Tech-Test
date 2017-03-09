@@ -1,9 +1,6 @@
 class Player {
-  constructor(name) {
+  constructor(name, type) {
     this.name = name;
-  }
-
-  setXO(type) {
     this.type = type;
   }
 }
