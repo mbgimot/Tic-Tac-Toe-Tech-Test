@@ -5,13 +5,19 @@ class Game {
     this.players = players
   }
 
-  getRandomStartingTurn (){
-    this.turn = this.players[Math.floor(Math.random() * this.players.length)];
-    return this.turn
+  getRandomStartingTurn (player){
+    if (player === undefined) {
+      this.turn = this.players[Math.floor(Math.random() * this.players.length)];
+    }
+    else {
+      this.turn = player;
+    }
+    return this.turn;
   }
 
   getNextTurn(){
-
+    this.turn === this.players[0] ? (this.turn = this.players[1]) : (this.turn = this.players[0]);
+    return this.turn;
   }
 
 }
