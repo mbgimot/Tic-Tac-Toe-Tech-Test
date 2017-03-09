@@ -9,13 +9,21 @@ describe('Game', function(){
     expect(game.players[1].name).toEqual('Player2');
   });
 
-  it('Should randomly decide who starts playing', function(){
-    spyOn(game, 'getRandomStartingTurn').and.returnValue(player1)
-    expect(game.getRandomStartingTurn()).toEqual(player1);
+  it('Should initialize with 9 moves', function(){
+    expect(game.numberOfMoves).toEqual(9);
   });
 
-  it('Should alternate players on each turn', function(){
-    game.getRandomStartingTurn(player1)
-    expect(game.getNextTurn()).toEqual(player2);
+  describe('Turn', function(){
+    it('Should randomly decide who starts playing', function(){
+      spyOn(game, 'getRandomStartingTurn').and.returnValue(player1)
+      expect(game.getRandomStartingTurn()).toEqual(player1);
+    });
+
+    it('Should alternate players on each turn', function(){
+      game.getRandomStartingTurn(player1)
+      expect(game.getNextTurn()).toEqual(player2);
+    });
   });
+
+
 });

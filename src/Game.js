@@ -3,6 +3,8 @@ const MAX_NUMBER_OF_MOVES = 9;
 class Game {
   constructor (players){
     this.players = players
+    this.numberOfMoves = MAX_NUMBER_OF_MOVES;
+    this.board = new Board();
   }
 
   getRandomStartingTurn (player){
